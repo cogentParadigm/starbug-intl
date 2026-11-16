@@ -6,6 +6,7 @@ use Starbug\Db\DatabaseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Starbug\Display\DisplayFactoryInterface;
 use Starbug\Display\FormDisplay;
+use Starbug\Intl\Collection\ProvincesSelectCollection;
 use Starbug\Display\Hook\FormHookFactoryInterface;
 use Starbug\Intl\TranslationInterface;
 use Starbug\Templates\TemplateInterface;
@@ -58,7 +59,7 @@ class AddressForm extends FormDisplay {
         $this->add(["locality", "input_type" => "text", "label" => "City"] + $append);
       } elseif ($token == 'S') {
         if (in_array($country['code'], ['US', 'CA'])) {
-          $this->add(["administrative_area", "input_type" => "select", "from" => "provinces", "query" => "ProvincesSelect", "label" => $country['province_label'], "country" => $country['code']] + $append);
+          $this->add(["administrative_area", "input_type" => "select", "from" => "provinces", "query" => ProvincesSelectCollection::class, "label" => $country['province_label'], "country" => $country['code']] + $append);
         } else {
           $this->add(["administrative_area", "input_type" => "text", "label" => $country['province_label']] + $append);
         }
