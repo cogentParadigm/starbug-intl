@@ -10,7 +10,7 @@ use Starbug\Intl\Script\IntlSetup;
 
 return [
   "route.providers" => add([
-    get("Starbug\Intl\RouteProvider")
+    get(RouteProvider::class)
   ]),
   "db.schema.migrations" => add([
     get("Starbug\Intl\Migration")

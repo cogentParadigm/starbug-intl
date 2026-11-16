@@ -13,13 +13,12 @@
     "namespace": "Starbug\\Intl"
   },
   "require": {
-    "starbug/routing": "^1.0",
-    "starbug/admin": "^0.9",
-    "starbug/display": "^0.9",
+    "starbug/api": "^0.9",
     "starbug/bundle": "^1.0",
     "starbug/config": "^0.9.0",
     "starbug/db": "^0.12",
-    "starbug/dojo": "^1.1",
+    "starbug/display": "^0.9",
+    "starbug/routing": "^1.0",
     "starbug/templates": "^1.0"
   },
   "autoload": {
